@@ -1,10 +1,12 @@
 package booleanpack;
 
-public class boo {
+public class Boolean {
 
     public static void main(String[] args) {
-        boo rv = new boo();
-        System.out.println("op is " + rv.isBoolean(1211));
+        Boolean rv = new Boolean();
+        System.out.println("op is " + rv.isBoolean(1211)+"\n");
+        //another method to find bin no.
+        rv.isBinaryOrNot(111);
     }
 
     private boolean isBoolean(int num) {
@@ -33,5 +35,28 @@ public class boo {
             num = num / 10;
         }
         return true;
+    }
+
+    private void isBinaryOrNot(int number) {
+        boolean isBinary = true;
+
+        int copyOfNumber = number;
+
+        while (copyOfNumber != 0) {
+            int temp = copyOfNumber % 10;   //Gives last digit of the number
+
+            if (temp > 1) {
+                isBinary = false;
+                break;
+            } else {
+                copyOfNumber = copyOfNumber / 10;    //Removes last digit from the number
+            }
+        }
+
+        if (isBinary) {
+            System.out.println(number + " is a binary number");
+        } else {
+            System.out.println(number + " is not a binary number");
+        }
     }
 }
