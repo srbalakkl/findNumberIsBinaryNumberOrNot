@@ -4,7 +4,7 @@ public class Boolean {
 
     public static void main(String[] args) {
         Boolean rv = new Boolean();
-        System.out.println("op is " + rv.isBoolean(1211)+"\n");
+        System.out.println("op is " + rv.isBoolean(1211) + "\n");
         //another method to find bin no.
         rv.isBinaryOrNot(111);
     }
@@ -25,6 +25,10 @@ public class Boolean {
 
             //Dividing binary number with 10 will only give either 0 or 1 as a remainder
             //so if num != 0 or 1 then definitely it is not a binary number
+
+            //or to say in other word ' num % 10 ' will give last digit of the number
+            // eg : if a number 1234
+            //then ' num % 10 ' gives ' 4 ' which is the last number of 1234
             if (num % 10 > 1) {
                 return false;
             }
